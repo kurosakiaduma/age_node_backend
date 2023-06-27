@@ -84,20 +84,25 @@ void freeNode(Node *node) {
 }
 
 int main() {
-  Node *addNode = makeFunc(ADD, 10, 6);
-  Node *mulNode = makeFunc(MUL, 5, 4);
-  Node *subNode = makeFunc(SUB, calc(mulNode), calc(addNode));
-  Node *fiboNode = makeFunc(SUB, calc(subNode), 0);
+    int n;
+    
+    printf("Enter a value for n: ");
+    scanf("%d", &n);
+    
+    Node *addNode = makeFunc(ADD, 10, 6);
+    Node *mulNode = makeFunc(MUL, 5, 4);
+    Node *subNode = makeFunc(SUB, calc(mulNode), calc(addNode));
+    Node *fiboNode = makeFunc(SUB, calc(subNode), 0);
 
-  printf("add: %d\n", calc(addNode));
-  printf("mul: %d\n", calc(mulNode));
-  printf("sub: %d\n", calc(subNode));
-  printf("fibo: %d\n", fib(calc(fiboNode)));
+    printf("add: %d\n", calc(addNode));
+    printf("mul: %d\n", calc(mulNode));
+    printf("sub: %d\n", calc(subNode));
+    printf("fibo: %d\n", fib(n));
 
-  freeNode(addNode);
-  freeNode(mulNode);
-  freeNode(subNode);
-  free(fiboNode);
+    freeNode(addNode);
+    freeNode(mulNode);
+    freeNode(subNode);
+    free(fiboNode);
 
-  return 0;
+    return 0;
 }
