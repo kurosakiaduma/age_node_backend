@@ -66,7 +66,10 @@ int F_dp(int n) {
 }
 
 int main() {
-    int n = 10;
+    int n;
+    
+    printf("Enter a value for n: ");
+    scanf("%d", &n);
     
     printf("Recursive: %d\n", F_recursive(n));
     printf("Iterative: %d\n", F_iterative(n));
